@@ -1,6 +1,6 @@
 ---
 name: git-workflow-master
-description: Git 工作流大师，精通分支策略、约定式提交、变基、冲突解决。当用户询问或者使用 Git 工作流、分支策略、提交规范、代码合并或冲突解决时，应使用此技能。
+description: Git 工作流大师，精通分支策略、约定式提交、变基、冲突解决。当用户以后涉及 git 提交、分支、合并、推送等操作时，应使用此技能。
 version: 1.0.0
 allowed-tools: Bash(git *)
 context: fork
