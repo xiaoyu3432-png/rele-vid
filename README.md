@@ -1,42 +1,75 @@
-# sv
+# Creator Hub
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+博主工具类 Web 应用，为内容创作者提供多平台管理、数据分析和素材管理能力。
 
-## Creating a project
+## 技术栈
 
-If you're seeing this, you've probably already done this step. Congrats!
+- **框架**：Svelte 5 + SvelteKit（Runes 模式）
+- **样式**：Tailwind CSS v4
+- **语言**：TypeScript
+- **图标**：Lucide Icons
+- **构建**：Vite 8
 
-```sh
-# create a new project
-npx sv create my-app
-```
+## 功能
 
-To recreate this project with the same configuration:
+- **数据概览** — 总粉丝、播放量、收益、互动率等核心指标，各平台数据对比
+- **平台管理** — 抖音、小红书、B 站、微博等平台的连接/断开、数据同步
+- **素材管理** — 图片/视频/文档的网格/列表视图，支持筛选、多选发布到指定平台，点击预览播放
+- **设置** — 个人信息编辑、账号绑定、通知偏好、深色/浅色主题切换
 
-```sh
-# recreate this project
-npx sv@0.15.3 create --template minimal --types ts --no-install creator-hub
-```
+## 快速开始
 
-## Developing
+```bash
+# 安装依赖
+npm install
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
+# 启动开发服务器
 npm run dev
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```sh
+# 构建生产版本
 npm run build
+
+# 预览生产版本
+npm run preview
 ```
 
-You can preview the production build with `npm run preview`.
+## 项目结构
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+```
+src/
+├── app.css                          # Design Token + 全局样式
+├── lib/
+│   ├── components/ui/               # 可复用组件库
+│   │   ├── Button.svelte
+│   │   ├── Card.svelte
+│   │   ├── Modal.svelte
+│   │   ├── StatCard.svelte
+│   │   └── ...
+│   └── stores/theme.svelte.ts       # 主题状态管理
+└── routes/
+    ├── +layout.svelte               # 主布局（Header + Sidebar）
+    ├── +page.svelte                 # 数据概览
+    ├── platforms/+page.svelte       # 平台管理
+    ├── media/+page.svelte           # 素材管理
+    └── settings/+page.svelte        # 设置
+```
+
+## 页面预览
+
+### 平台管理
+
+![数据概览](img/Snipaste_2026-06-03_02-06-07.png)
+
+### 素材管理
+
+![素材管理](img/Snipaste_2026-06-03_02-06-14.png)
+
+### 设置
+
+![设置](img/Snipaste_2026-06-03_02-06-22.png)
+
+### 移动端适配
+
+| 数据概览 | 平台管理 | 素材管理 | 设置 |
+|:---:|:---:|:---:|:---:|
+| ![移动端数据概览](img/Snipaste_2026-06-03_02-06-56.png) | ![移动端平台管理](img/Snipaste_2026-06-03_02-07-07.png) | ![移动端素材管理](img/Snipaste_2026-06-03_02-07-18.png) | ![移动端设置](img/Snipaste_2026-06-03_02-06-46.png) |
